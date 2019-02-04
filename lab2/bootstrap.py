@@ -7,9 +7,11 @@ import numpy as np
 
 def boostrap(sample, sample_size, iterations):
 	# <---INSERT YOUR CODE HERE--->
-	#multipl_result = np.zeros(( np.array(matrix1).shape[0], np.array(matrix2).shape[1] ))
-	new_samples = np.array(sample).shape[iterations,sample_size]
-	
+	new_sample = np.random.choice(sample,size=(iterations,sample_size))
+	data_mean = np.mean(sample)
+	lower = np.percentile(sample,0)
+	upper = np.percentile(sample,95)
+
 	return data_mean, lower, upper
 
 
